@@ -4,5 +4,10 @@ require:
   - rubocop-rspec
 
 AllCops:
+  Exclude:
+    - bin/rake
   NewCops: enable
   TargetRubyVersion: 3.1
+
+Style/Documentation:
+  Enabled: false
