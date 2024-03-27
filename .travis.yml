@@ -10,11 +10,18 @@ jobs:
       rvm: 3.3
       install: bin/setup
       script: bin/rake rubocop
-    - name: test
+    - name: test (ruby 3.1)
       language: ruby
-      rvm:
-        - 3.1
-        - 3.2
-        - 3.3
+      rvm: 3.1
+      install: bin/setup
+      script: bin/rake appraisal rspec
+    - name: test (ruby 3.2)
+      language: ruby
+      rvm: 3.2
+      install: bin/setup
+      script: bin/rake appraisal rspec
+    - name: test (ruby 3.3)
+      language: ruby
+      rvm: 3.3
       install: bin/setup
       script: bin/rake appraisal rspec
