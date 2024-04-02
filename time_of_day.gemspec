@@ -4,8 +4,7 @@ require_relative 'lib/time_of_day/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'time_of_day'
-  spec.summary = 'YOU STILL NEED TO FILL ME IN'
-  spec.description = 'YOU STILL NEED TO FILL ME IN'
+  spec.summary = 'A date-less time class for use with ActiveSupport.'
   spec.author = 'UMass Transportation Services'
   spec.email = ['transportation-it@groups.umass.edu']
   spec.license = 'MIT'

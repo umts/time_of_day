@@ -1,35 +1,53 @@
 # TimeOfDay
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/time_of_day`. To experiment with that code, run `bin/console` for an interactive prompt.
+A date-less time class for use with ActiveSupport.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add time_of_day
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install time_of_day
 
 ## Usage
 
-TODO: Write usage instructions here
+Once required, `time_of_day` exposes the `TimeOfDay` class, which exposes all of the same methods that
+the `Time` class exposes (minus those that involve dates/days).
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+This project is written as a standard rubygem, using [`bundler`][bundler] to manage dependencies, [`rspec`][rspec] for
+tests and [`rubocop`][rubocop] as a linter. Additionally, [`overcommit`][overcommit] is included to help developers
+automatically run rubocop before commit, and [`semantic-release`][semantic-release] to streamline the release process.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+**[`semantic-release`][semantic-release] requires that any commits merged into the main branch follow the
+[Conventional Commits specification][conventional-commits] in order to determine what (if any) kind of version bump
+is required for release.**
+
+### Command cheatsheet
+
+- Run `bin/setup` to install dependencies
+- Run `bin/rake appraisal rspec` to run the tests
+- Run `bin/rake rubocop` to run the linter
+- Run `bin/console` for an interactive prompt that will allow you to experiment
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/time_of_day.
+Bug reports and pull requests are welcome on GitHub at https://github.com/umts/time_of_day.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License][license].
+
+[active_support]: https://github.com/rails/rails/tree/main/activesupport
+[bundler]: https://github.com/rubygems/rubygems
+[conventional-commits]: https://www.conventionalcommits.org/en/v1.0.0/
+[license]: https://opensource.org/licenses/MIT
+[overcommit]: https://github.com/sds/overcommit
+[rspec]: https://github.com/rspec/rspec-core
+[rubocop]: https://github.com/rubocop/rubocop
+[semantic-release]: https://github.com/semantic-release/semantic-release
+
