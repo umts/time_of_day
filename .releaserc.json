@@ -17,7 +17,7 @@
       "@semantic-release/git",
       {
         "assets": [
-          "lib/limitable/version.rb",
+          "lib/time_of_day/version.rb",
           "Gemfile.lock",
           "CHANGELOG.md"
         ],
