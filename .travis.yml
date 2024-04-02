@@ -1,0 +1,49 @@
+branches:
+  only:
+    - main
+dist: jammy
+language: ruby
+stages:
+  - ci
+  - cd
+jobs:
+  include:
+    - stage: ci
+      name: lint
+      language: ruby
+      rvm: 3.3
+      install: bin/setup
+      script: bin/rake rubocop
+    - stage: ci
+      name: test
+      language: ruby
+      rvm: 3.1
+      install: bin/setup
+      script: bin/rake appraisal rspec
+    - stage: ci
+      name: test
+      language: ruby
+      rvm: 3.2
+      install: bin/setup
+      script: bin/rake appraisal rspec
+    - stage: ci
+      name: test
+      language: ruby
+      rvm: 3.3
+      install: bin/setup
+      script: bin/rake appraisal rspec
+    - stage: cd
+      name: release
+      language: ruby
+      rvm: 3.3
+      install:
+        - bin/setup
+        - nvm install lts/*
+        - npm install --global semantic-release@23 @semantic-release/changelog@6 @semantic-release/git@10 semantic-release-rubygem@1
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npx semantic-release@23
+        on:
+          branch: main

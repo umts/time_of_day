@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+bundle install
+bundle exec appraisal install
+bundle exec overcommit --sign
+bundle exec overcommit --install
